@@ -196,22 +196,22 @@
 
 <section id="pr" class="template landingItem">
     <div class="wrap">
-        <div class="inline-row t-center bx-animate">
-            <div class="pr-block bx-animate-item">
+        <div class="inline-row t-center">
+            <div class="pr-block animated">
                 <img src="img/pr/track.png" />
                 <div class="plank">
                     <div class="header">Доставка по Украине</div>
                     <p>Доставляем до ближайешего<br> отделения Новой почты!</p>
                 </div>
             </div>
-            <div class="pr-block bx-animate-item">
+            <div class="pr-block animated">
                 <img src="img/pr/2-min.png" />
                 <div class="plank">
                     <div class="header">Легкость покупки!</div>
                     <p>Оплата при получения или перевод на карту!<br>Отправка гироскутера в день заказа!<br>Техническая помощь при выборе!</p>
                 </div>
             </div>
-            <div class="pr-block bx-animate-item">
+            <div class="pr-block animated">
                 <img src="img/pr/3-min.png" />
                 <div class="plank">
                     <div class="header">Гарантия 1 год!</div>
@@ -226,38 +226,35 @@
     <div class="wrap">
         <h2 class="title t-center"><span class="big">Гироскутер</span> транспорт будущего</h2>
         <div class="row">
-            <div class="cell bx-animate">
-                <div class="future-block bx-animate-item">
-                    <p>Чтобы начать движение, следует наклонить корпус вперед и надавить передней частью ступни на педали гироскутера - и чем сильнее, тем быстрее будет скорость.</p>
+            <div class="cell">
+                <div class="future-block">
+                    <p class="animated">Чтобы начать движение, следует наклонить корпус вперед и надавить передней частью ступни на педали гироскутера - и чем сильнее, тем быстрее будет скорость.</p>
                 </div>
-                <div class="future-block bx-animate-item">
-                    <p>Для движения назад или остановки, необходимо перенести вес с носка на пятку и отклонить корпус назад.</p>
+                <div class="future-block">
+                    <p class="animated">Для движения назад или остановки, необходимо перенести вес с носка на пятку и отклонить корпус назад.</p>
                 </div>
             </div>
-            <div class="cell bx-animate">
-                <div class="future-block bx-animate-item">
-                    <p>Для поворота влево нужно переместить вес тела на правое колесо.</p>
+            <div class="cell">
+                <div class="future-block">
+                    <p class="animated">Для поворота влево нужно переместить вес тела на правое колесо.</p>
                 </div>
-                <div class="future-block bx-animate-item">
-                    <p>Для поворота вправо нужно переместить вес тела на левое колесо.</p>
+                <div class="future-block">
+                    <p class="animated">Для поворота вправо нужно переместить вес тела на левое колесо.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-
 <section id="mp-block" class="template">
     <div class="wrap">
         <div class="row">
             <div class="cell">
-                <div id="move-to-h"></div>
                 <img src="img/map-kiev.png"></div>
-            <div class="cell">
-                <h2 class="title" id="move-h">Запас хода до 20 км</h2>
+            <div class="cell custom-flex">
+                <h2 class="title" id="move-h">Запас хода до <span style="white-space:nowrap">20 км</span></h2>
                 <p>Высокоемкий аккумулятор позволит преодолеть расстояние до 20 км. Например, если вы в Киеве, вы с
-                    легкостью доберетесь от станции метро "Васильковская" до станции метро "Героев Днепра" с ветерком и
-                    без пробок.</p>
+                    легкостью доберетесь от станции метро "Васильковская" до станции метро "Героев Днепра" с ветерком и без пробок.</p>
             </div>
         </div>
     </div>
@@ -266,35 +263,37 @@
 <section id="speed" class="template black-bg">
     <div class="wrap">
         <div class="row">
-            <div class="cell"><h2 class="title">Скорость<br>до 20 км/ч</h2>
-
-                <div id="img-here"></div>
+            <div class="cell custom-flex">
+                <h2 class="title">Скорость до 20 км/ч</h2>
                 <p>В среднем гироскутер развивает скорость до 20 км/ч, может подниматься в гору под углом 30 градусов,
-                    ловко поворачивать и разворачиваться.</p></div>
-            <div class="cell t-right"><img src="img/speed-min.png" id="move-img"></div>
+                    ловко поворачивать и разворачиваться.</p>
+            </div>
+            <div class="cell t-right">
+                <img src="img/speed-min.png" id="move-img">
+            </div>
         </div>
     </div>
 </section>
 
-
 <section class="blue-line template first" id="user_manual">
     <div class="wrap">
-        <div class="inline-row"><p class="info">Получить инструкцию по эксплуатации</p>
-
+        <div class="inline-row">
+            <p class="info">Получить инструкцию по эксплуатации</p>
             <form class="subform" id="first-blue" name="request-form">
-                <div class="bg-input hidden"><input type="text" name="address" placeholder="Введите Ваш адрес"></div>
-                <div class="bg-inp"><input type="text" class="requaired" name="mail" placeholder="Введите Ваш e-mail"
-                                           title="Введите адрес электронной почты в формате email@email.ru"
-                                           pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
-                                           required="required"></div>
-                <input type="hidden" name="type" value="Инструкция"> <input type="hidden" name="action" value="instruction">
+                <div class="bg-input hidden">
+                    <input type="text" name="address" placeholder="Введите Ваш адрес" />
+                </div>
+                <div class="bg-inp">
+                    <input type="text" class="requaired" name="mail" placeholder="Введите Ваш e-mail" title="Введите адрес электронной почты в формате email@email.ru" required />
+                </div>
+                <input type="hidden" name="type" value="Инструкция"> <input type="hidden" name="action" value="instruction" />
                 <button type="submit" class="img-button blue-block">Получить</button>
             </form>
         </div>
     </div>
 </section>
 
-<section id="baby" class="template">
+<!--<section id="baby" class="template">
     <div class="wrap t-center"><h2 class="title">Подари ребёнку <span>счастье!</span></h2>
         <div class="clear-row">
             <div class="left">
@@ -310,7 +309,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 
 <!--<section id="catalog" class="template landingItem black-bg">
     <div class="wrap"><h2 class="title t-center"><span class="big">Каталог</span><br>выбери одну из 10 моделей</h2>

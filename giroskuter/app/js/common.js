@@ -82,17 +82,24 @@ $(document).ready(function(){
 
 
     //WAYPOINTS
-    $("section.pr").waypoint(function(){
-        $(".pr .bx-animate-item").each(function(index){
-            setInterval(function(){
-                $('.pr .bx-animate-item').animated('fadeInRight');
-            }, 100*index);
+    $("#pr").waypoint(function(){
+        $("#pr .animated").each(function(index){
+            setTimeout(function(){
+                $("#pr .animated").eq(index).css("opacity","1").addClass('fadeInRight');
+            }, 300*index);
+        });
+    },{offset: "20%"});
+    $("#manual").waypoint(function(){
+        $("#manual .future-block p").each(function(index){
+            setTimeout(function(){
+                $("#manual .animated").eq(index).css("opacity","1").addClass('fadeIn');
+            }, 300*index);
         });
     },{offset: "20%"});
 
 
     //СКРИПТ ДЛЯ ЦИФР ВЫЗОВ
-    numbers(76,'ball',15);
+    //numbers(76,'ball',15);
 
     //СКРИПТ ДЛЯ ЦИФЕР
     function numbers(val,el,timeout){

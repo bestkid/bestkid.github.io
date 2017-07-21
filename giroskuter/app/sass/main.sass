@@ -8,6 +8,9 @@
   .header, p
     font-family: "PTSansBold", sans-serif
 
+#pr .animated
+  opacity: 0
+
 .podrb
   font-family: "PTSansBold", sans-serif
 
@@ -49,6 +52,11 @@
   height: 600px
   margin: 0 auto
 
+.inline-row
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+
 #pr
   padding-top: 44px
   box-sizing: border-box
@@ -58,19 +66,8 @@
   .pr-block
     display: inline-block
     vertical-align: top
-    width: 300px
-    margin: 0 20px
-    &.active
-      &:nth-of-type(1)
-        transition: opacity 1s
-        transition-delay: 0s
-      &:nth-of-type(2)
-        transition: opacity 1s
-        transition-delay: .4s
-      &:nth-of-type(3)
-        transition: opacity 1s
-        transition-delay: .8s
-      opacity: 1
+    width: 372px
+    margin: 10px 0
     &:first-of-type .plank
       height: 151px
       background: url("../img/pr/pl1-min.png") center no-repeat
@@ -90,14 +87,14 @@
       max-width: 100%
       .header
         text-transform: uppercase
-        line-height: 1.1em
-        font-size: 2.4rem
+        line-height: 1
+        font-size: 1.5em
         color: #33352a
         margin-bottom: 23px
       p
-        font-size: 16px
+        font-size: 1.1em
         color: #fff
-        line-height: 1.2em
+        line-height: 1.2
 
 #manual .future-block p, #mp-block p, #speed p
   color: #fff
@@ -106,89 +103,103 @@
 #manual
   padding-bottom: 90px
   .row .cell
+    padding-left: 140px
     &:first-of-type
       background: url("../img/fut1-min.png") left center no-repeat
-      padding-left: 140px
       .future-block
         &:first-of-type p
           background: url("../img/future/1-min.png") left center no-repeat
         &:last-of-type p
           background: url("../img/future/2-min.png") left center no-repeat
-        p
-          padding-right: 60px
     &:last-of-type
-      padding-left: 170px
-      background: url("../img/fut2-min.png") 18px center no-repeat
+      background: url("../img/fut2-min.png") left center no-repeat
       .future-block
         &:first-of-type p
           background: url("../img/future/3-min.png") left center no-repeat
         &:last-of-type p
           background: url("../img/future/4-min.png") left center no-repeat
-        p
-          padding-right: 55px
   .future-block
-    font-size: 0
-    display: table
     box-sizing: border-box
-    transition: opacity 1s
+    p
+      padding-right: 10px
+      opacity: 0
 
 #mp-block p, #speed p, .podrb
-  font-size: 1.8rem
+  font-size: 1.1em
+
+.title
+  font-weight: 100
+  font-size: 3.6em
+  color: #fff
+  line-height: 1.2
+  padding-top: 58px
+  padding-bottom: 40px
+  .big
+    display: block
+    font-size: 72px
+    text-transform: uppercase
+
+.row
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  .cell
+    flex: 1 0 400px
+    box-sizing: border-box
 
 #manual
-  .future-block.active
-    opacity: 1
-  .cell
-    &:first-of-type .future-block.active
-      &:first-of-type
-        transition: opacity 1s
-        transition-delay: 0s
-      &:last-of-type
-        transition: opacity 1s
-        transition-delay: .4s
-    &:last-of-type .future-block.active
-      &:first-of-type
-        transition: opacity 1s
-        transition-delay: .8s
-      &:last-of-type
-        transition: opacity 1s
-        transition-delay: 1.2s
   .future-block
-    &:not(:last-of-type)
-      margin-bottom: 45px
+    &+.future-block
+      margin-top: 45px
     img
       display: inline-block
       vertical-align: middle
     p
-      padding-left: 120px
+      padding-left: 110px
       box-sizing: border-box
       height: 230px
-      display: table-cell
       vertical-align: middle
-      font-size: 1.8rem
-      margin-left: 30px
+      font-size: 1.1em
+      display: table-cell
 
 #mp-block
   background-image: url("../img/pod-min.png")
   background-repeat: no-repeat, repeat
   background-position: center
   .title
-    padding-top: 120px
     padding-bottom: 39px
+    padding-top: 0
+  img
+    display: block
+    margin: 0 auto
+
+#mp-block .custom-flex
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+#mp-block .wrap, #speed .wrap
+  padding: 0 15px
 
 #speed
-  padding-bottom: 78px
+  padding: 78px 0
   .title
-    padding-top: 120px
-    padding-bottom: 72px
+    padding-bottom: 38px
+    padding-top: 0
   p
-    max-width: 100%
+    max-width: 450px
   .row .cell
     width: auto
     &:last-of-type
       width: 55%
   img
-    margin-top: 60px
+    display: block
+    margin: 0 auto
+
+#speed .custom-flex
+  display: flex
+  flex-direction: column
+  justify-content: center
 
 .podrb
   text-decoration: none
@@ -2174,25 +2185,8 @@ textarea:-webkit-autofill
 @media (min-width: 992px) and (max-width: 1200px)
   .blue-line .info, .nth2 .clear-row
     text-align: center
-  .wrap
-    max-width: 970px
   header .bottom-header .wrap > div
     width: 90%
-  #pr .pr-block
-    &:first-of-type .plank, &:nth-of-type(2) .plank, &:nth-of-type(3) .plank
-      width: 300px
-    &:nth-of-type(2)
-      padding: 0 10px
-    .plank
-      padding-top: 30px
-      .header
-        line-height: 1em
-        font-size: 2rem
-        margin-bottom: 10px
-      p
-        font-size: 1.6rem
-        padding-left: 10px
-        padding-right: 10px
   .blue-line
     padding-top: 44px
     .info
@@ -2251,13 +2245,6 @@ textarea:-webkit-autofill
   #catalog .row .cell:first-of-type figure img
     margin-top: 320px
     width: 97%
-  #mp-block .title
-    padding-top: 160px
-    font-size: 4rem
-  #speed .title
-    padding-bottom: 40px
-    font-size: 5rem
-    line-height: 1em
   #comments .wrap > div
     padding: 60px 160px 0 60px
   #faq
@@ -2348,49 +2335,13 @@ textarea:-webkit-autofill
       font-size: 1.4rem
     .phone .header-button
       font-size: 1.4rem
-  #pr .pr-block
-    width: 300px
-    .plank
-      margin: 0 auto
-      max-width: 300px
-      .header
-        line-height: 1.1em
-        font-size: 1.6rem
-        margin-bottom: 12px
-      p
-        font-size: 1.6rem
-        line-height: 1em
   .title
     font-size: 30px
     .big
       font-size: 50px
-  #manual
-    .row .cell
-      &:first-of-type
-        background: none
-        padding: 10px
-      &:last-of-type
-        padding: 10px
-        background: none
-      &:first-of-type .future-block
-        &:first-of-type p, &:last-of-type p
-          background-size: 76px
-      &:last-of-type .future-block
-        &:first-of-type p, &:last-of-type p
-          background-size: 76px
-    .future-block p
-      padding-left: 90px
-      height: 160px
-      font-size: 1.6rem
   #baby
     .bl-1, [class^=bl]
       font-size: 22px
-  #manual .row .cell:first-of-type .future-block p
-    padding-right: 0
-  #speed .title
-    padding-top: 80px
-    padding-bottom: 34px
-    line-height: 1em
   .blue-line
     padding-top: 46px
     .info
@@ -2552,8 +2503,6 @@ textarea:-webkit-autofill
     .modal-content p
       font-size: 16px
       line-height: 17px
-  .title
-    line-height: 1em
   #peoples .people
     .info
       .name
@@ -2714,6 +2663,17 @@ textarea:-webkit-autofill
     flex-direction: column
   #baby .bl-4
       margin-top: 30px
+  #pr
+    padding-bottom: 40px
+  #manual
+    padding-bottom: 70px
+    .row .cell
+      flex: 1 0 320px
+      padding-left: 100px
+      .future-block p
+        padding-left: 100px
+  #mp-block .row .cell, #speed .row .cell
+    flex: 1 0 290px
 
 
 
