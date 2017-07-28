@@ -1,0 +1,47 @@
+//@import "bourbon"
+@import "vars"
+
+
+@media only screen and (max-width: 1200px)
+  .products-page .swiper-container .swiper-slide .product-thumb
+    height: 20vw
+
+@media only screen and (max-width: 900px)
+  footer
+    .tl-top .tlt-wrap .tlt-content
+      justify-content: space-around
+      .top-search form
+        display: none
+      .top-phones
+        display: inline-block
+      .top-search ul
+        display: inline-block
+        margin: 10px
+
+@media only screen and (max-width: 768px)
+  .products-page .swiper-container .swiper-slide p
+    display: none
+  .contact-page .map
+    .address
+      position: static
+      width: auto
+      border-radius: 0
+    .map-content
+      height: 300px
+
+@media only screen and (max-width: 500px)
+  .main-top .main-top-content>div
+    flex: 1 0 290px
+    height: 200px
+    .link-wrapper a
+      font-size: 18px
+      .big-text
+        font-size: 24px
+
+@media only screen and (max-width: 430px)
+  footer .tl-top .tlt-wrap .tlt-content
+    flex-wrap: wrap
+
+@media only screen and (max-width: 380px)
+  .offers .sec-content .offers-list .offers-item
+    margin: 20px 0

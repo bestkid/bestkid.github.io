@@ -1,0 +1,408 @@
+@import "bourbon"
+@import "sass/vars"
+@import "sass/base"
+@import "sass/hamburger"
+
+//First screen styles
+html
+  min-height: 100%
+  display: flex
+  flex-direction: column
+
+body
+  flex: auto
+  font-size: 16px
+  line-height: 1.3
+  min-width: 320px
+  position: relative
+  font-family: $default-font
+  overflow-x: hidden
+  color: $default-color
+  display: flex !important
+  flex-direction: column
+  justify-content: flex-start
+  margin: 0
+  background-color: #fff
+
+main
+  flex-grow: 1
+  overflow-x: hidden
+
+.container
+  max-width: 1180px
+  padding: 0 15px
+  margin: 0 auto
+  position: relative
+
+
+
+.tl-top
+  background: url(img/top_line_bg.jpg) repeat
+  padding: 20px 0
+  .tlt-wrap
+    padding-left: 150px
+    .tlt-content
+      display: flex
+      justify-content: space-between
+      align-items: center
+      .top-email
+        display: inline-block
+        a
+          color: #fff
+          text-transform: uppercase
+          font-size: .8em
+          white-space: nowrap
+          .fa
+            margin-right: 5px
+          .red-text
+            color: $accent
+      .top-phones
+        display: inline-block
+        margin: 0 10px
+        ul
+          margin: 0
+          padding: 0
+          display: flex
+          justify-content: center
+          align-items: center
+          flex-wrap: wrap
+          li
+            display: inline-block
+            &+li
+              margin-left: 20px
+            .fa
+              font-size: 1.2em
+              margin-right: 5px
+              color: #898B86
+              vertical-align: -2px
+            a
+              color: #fafafa
+              font-family: 'PTSansBold', sans-serif
+              font-size: 1.2em
+              .small-text
+                font-size: .7em
+                vertical-align: 4px
+              .red-text
+                color: $accent
+      .top-search
+        white-space: nowrap
+        form
+          display: inline-block
+          vertical-align: middle
+          label
+            display: block
+            width: 160px
+            height: 30px
+            position: relative
+            input[type=search]
+              display: block
+              box-sizing: border-box
+              width: 100%
+              height: 100%
+              border: none
+              background: linear-gradient(to bottom, rgba(255,255,255,.1), rgba(255,255,255,.3))
+              color: #fafafa
+              padding: 0 30px 0 10px
+            input[type=submit]
+              display: block
+              width: 30px
+              height: 30px
+              border: none
+              background: transparent
+              font-family: 'FontAwesome', sans-serif
+              color: #898B86
+              font-size: 12px
+              position: absolute
+              right: 0
+              top: 0
+              cursor: pointer
+        ul
+          margin: 0 0 0 20px
+          padding: 0
+          display: inline-block
+          vertical-align: middle
+          li
+            display: inline-block
+            vertical-align: middle
+            width: 24px
+            height: 24px
+            border-radius: 50%
+            background-color: #fafafa
+            text-align: center
+            line-height: 24px
+            transition: all ease .3s
+            &+li
+              margin-left: 10px
+            &.red-bg
+              background-color: $accent
+              &:hover
+                background-color: #fafafa
+            &:hover
+              background-color: $accent
+            a
+              color: $default-color
+              .fa
+                font-size: 15px
+
+/*==================================================     nav-trigger sass    ======================================*/
+.nav-trigger
+  width: 30px
+  height: 30px
+  position: relative
+  background: transparent
+  border: none
+  vertical-align: middle
+  padding: 0
+  margin: 0
+  cursor: pointer
+  display: none
+.nav-trigger:focus
+  outline: 0
+.nav-trigger:hover span, .nav-trigger:hover span:before, .nav-trigger:hover span:after
+  background: #fafafa
+.nav-trigger:before
+  content: ''
+  opacity: 0
+  width: 0
+  height: 0
+  border-radius: 50%
+  position: absolute
+  top: 50%
+  left: 50%
+  background: transparent
+  transform: translate(-50%, -50%)
+  transition: all 0.4s ease
+.nav-trigger span
+  display: block
+  position: relative
+.nav-trigger span:before, .nav-trigger span:after
+  content: ''
+  position: absolute
+  left: 0
+.nav-trigger span:before
+  top: -8px
+.nav-trigger span:after
+  bottom: -8px
+.nav-trigger span,
+.nav-trigger span:before,
+.nav-trigger span:after
+  width: 100%
+  height: 4px
+  background: #fafafa
+  transition: all 0.4s ease
+.nav-trigger.is-active:before
+  opacity: 1
+  width: 50px
+  height: 50px
+  background: transparent
+.nav-trigger.is-active span
+  background: transparent
+.nav-trigger.is-active span:before
+  top: 0
+  transform: rotate(225deg)
+  background-color: $accent
+.nav-trigger.is-active span:after
+  bottom: 0
+  transform: rotate(-225deg)
+  background-color: $accent
+/*==================================================     nav-trigger sass    ======================================*/
+
+
+.mobile-menu
+  position: absolute
+  background-color: rgba(0,0,0,.8)
+  width: 260px
+  min-height: 100vh
+  top: 0
+  left: -260px
+  transition: all ease .5s
+  z-index: 10
+  &.active
+    left: 0
+  ul
+    margin: 0
+    padding: 20px
+    li
+      display: block
+      text-align: right
+      &+li
+        margin-top: 10px
+      &.current_page_item
+        a
+          color: $accent
+      a
+        color: #fafafa
+        text-transform: uppercase
+        font-size: 1em
+        .small-text
+          font-size: .7em
+          vertical-align: 2px
+        .red-text
+          color: $accent
+  .mobile-email
+    padding: 10px 20px
+    text-align: right
+    a
+      font-size: 1em
+      color: #fafafa
+      text-transform: uppercase
+      .fa
+        margin-right: 5px
+      .red-text
+        color: $accent
+  .mobile-soc
+    ul
+      text-align: right
+      li
+        display: inline-block
+        width: 26px
+        height: 26px
+        background-color: #fff
+        border-radius: 50%
+        text-align: center
+        &+li
+          margin-left: 10px
+        &.red-bg
+          background-color: $accent
+        a
+          color: #000
+          line-height: 26px
+
+
+
+
+.top-menu
+  padding: 30px 0 15px
+  .menu-wrapper
+    padding: 0 0 0 170px
+    position: relative
+    .logo
+      width: 150px
+      position: absolute
+      bottom: 0
+      left: 0
+      img
+        display: block
+        width: 100%
+        height: auto
+    nav
+      ul
+        margin: 0
+        padding: 0
+        display: flex
+        justify-content: flex-start
+        li
+          display: inline-block
+          &+li
+            position: relative
+            margin-left: 2px
+            &::before
+              content: ''
+              display: block
+              width: 2px
+              height: 10px
+              background-color: #1F1C22
+              position: absolute
+              right: 100%
+              top: 50%
+              transform: translateY(-50%)
+          a
+            display: block
+            padding: 6px 15px
+            color: #1F1C22
+            text-transform: uppercase
+            font-size: 1em
+            font-family: 'PTSansBold', sans-serif
+            transition: all ease .3s
+          &:hover, &.current_page_item
+            a
+              color: #fff
+              background-color: $accent
+              position: relative
+              &::before, &::after
+                content: ''
+                display: block
+                width: calc(50% - 2px)
+                height: 10px
+                background-color: rgba(0,0,0,.1)
+                position: absolute
+                top: calc(100% - 6px)
+                z-index: -1
+              &::before
+                transform: rotate(-3deg)
+                left: 2px
+              &::after
+                transform: rotate(3deg)
+                right: 2px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px)
+  .tl-top .tlt-wrap .tlt-content
+    .top-email, .top-phones, .top-search ul
+      display: none
+  .top-menu .menu-wrapper nav ul
+    display: none
+  .nav-trigger
+    display: block
+  .top-menu .menu-wrapper .logo
+    width: 125px
+  .top-menu
+    padding: 0
+
+@media only screen and (max-width: 380px)
+  .top-menu .menu-wrapper .logo
+    width: 90px
+    bottom: 10px
+  .tl-top .tlt-wrap
+    padding-left: 100px
+    .tlt-content .top-search form label
+      width: 145px
+
+
+@media only screen and (min-width: 901px)
+  .mobile-menu
+    display: none !important
+
+
+
+
